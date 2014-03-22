@@ -111,7 +111,7 @@ GameManager.prototype.move = function (direction) {
   var vector     = this.getVector(direction);
   var traversals = this.buildTraversals(vector);
   var moved      = false;
-
+  
   // Save the current tile positions and remove merger information
   this.prepareTiles();
 
@@ -149,6 +149,11 @@ GameManager.prototype.move = function (direction) {
           moved = true; // The tile moved from its original cell!
         }
       }
+      if (moved = true)
+      {
+        
+      }
+      }
     });
   });
 
@@ -161,6 +166,17 @@ GameManager.prototype.move = function (direction) {
 
     this.actuate();
   }
+  else
+    {
+      if (direction == 3)
+        move (1);
+      else if (direction == 2)
+        move (0);
+      else if (direction == 1)
+        move (3);
+      else if (direction == 0)
+        move (2);
+    }
 };
 
 // Get the vector representing the chosen direction
