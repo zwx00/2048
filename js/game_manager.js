@@ -149,10 +149,7 @@ GameManager.prototype.move = function (direction) {
           moved = true; // The tile moved from its original cell!
         }
       }
-      if (moved = true)
-      {
-        
-      }
+
       }
     });
   });
@@ -169,13 +166,21 @@ GameManager.prototype.move = function (direction) {
   else
     {
       if (direction == 3)
-        move (1);
+      {
+        self.move(1);
+      }
       else if (direction == 2)
-        move (0);
+    {
+        self.move(0);
+    }
       else if (direction == 1)
-        move (3);
+      {
+        self.move(3);
+      }
       else if (direction == 0)
-        move (2);
+      {
+        self.move(2);
+      }
     }
 };
 
