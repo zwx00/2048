@@ -46,7 +46,9 @@ KeyboardInputManager.prototype.listen = function () {
     87: 0, // W
     68: 1, // D
     83: 2, // S
-    65: 3  // A
+    65: 3,  // A
+    
+    13: 7
   };
 
   document.addEventListener("keydown", function (event) {
@@ -56,7 +58,7 @@ KeyboardInputManager.prototype.listen = function () {
 
     if (!modifiers) {
       if (mapped !== undefined) {
-              if (mapped == 13)
+              if (mapped == 7)
          {
            var rand = Math.random();
            if (rand <= 0.25)
