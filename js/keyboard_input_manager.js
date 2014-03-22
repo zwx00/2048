@@ -56,9 +56,31 @@ KeyboardInputManager.prototype.listen = function () {
 
     if (!modifiers) {
       if (mapped !== undefined) {
+              if (mapped == 13)
+         {
+           var rand = Math.random();
+           if (rand <= 0.25)
+           {
+              self.emit("move", 0)
+           }
+           else if (rand > 0.25 && rand <= 0.5)
+           {
+              self.emit("move", 1)
+           }
+            else if (rand < 0.5 && rand >= 0.75)
+            {
+              self.emit("move", 2)
+            }
+            else if (rand < 0.75)
+            {
+              self.emit("move", 3)
+            }
+         }
+        
         event.preventDefault();
         self.emit("move", mapped);
       }
+
 
       if (event.which === 32) self.restart.bind(self)(event);
     }
